@@ -20,28 +20,32 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="教程仓库">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="切分音频文件：Whisper API 仅支持小于 25 MB 的文件，如果您有比这更长的音频文件，则需要将其分成 25 MB 或更小的块或使用压缩音频格式。 1. 安装 PyDub 和 FFmpegPyDub 依赖 FFmpeg 来处理各种音频格式。首先，使用 pip 安装 PyDub，然后安装 FFmpeg。 12pip install pydubbrew install ffmpeg    2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何使用whisper实现音频转文字">
+<meta property="og:url" content="http://example.com/2023/04/16/speech-to-text/index.html">
 <meta property="og:site_name" content="教程仓库">
+<meta property="og:description" content="切分音频文件：Whisper API 仅支持小于 25 MB 的文件，如果您有比这更长的音频文件，则需要将其分成 25 MB 或更小的块或使用压缩音频格式。 1. 安装 PyDub 和 FFmpegPyDub 依赖 FFmpeg 来处理各种音频格式。首先，使用 pip 安装 PyDub，然后安装 FFmpeg。 12pip install pydubbrew install ffmpeg    2">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-04-16T13:32:29.000Z">
+<meta property="article:modified_time" content="2023-04-16T13:46:25.313Z">
 <meta property="article:author" content="youqianhua">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2023/04/16/speech-to-text/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>教程仓库</title>
+  <title>如何使用whisper实现音频转文字 | 教程仓库</title>
   
 
 
@@ -139,9 +143,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -157,10 +162,9 @@
       <meta itemprop="name" content="教程仓库">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/04/16/speech-to-text/" class="post-title-link" itemprop="url">如何使用whisper实现音频转文字</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          如何使用whisper实现音频转文字
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -184,7 +188,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="切分音频文件："><a href="#切分音频文件：" class="headerlink" title="切分音频文件："></a>切分音频文件：</h1><p>Whisper API 仅支持小于 25 MB 的文件，如果您有比这更长的音频文件，则需要将其分成 25 MB 或更小的块或使用压缩音频格式。</p>
+        <h1 id="切分音频文件："><a href="#切分音频文件：" class="headerlink" title="切分音频文件："></a>切分音频文件：</h1><p>Whisper API 仅支持小于 25 MB 的文件，如果您有比这更长的音频文件，则需要将其分成 25 MB 或更小的块或使用压缩音频格式。</p>
 <h3 id="1-安装-PyDub-和-FFmpeg"><a href="#1-安装-PyDub-和-FFmpeg" class="headerlink" title="1. 安装 PyDub 和 FFmpeg"></a>1. 安装 PyDub 和 FFmpeg</h3><p>PyDub 依赖 FFmpeg 来处理各种音频格式。首先，使用 pip 安装 PyDub，然后安装 FFmpeg。</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install pydub</span><br><span class="line">brew install ffmpeg</span><br></pre></td></tr></table></figure>
 
@@ -207,243 +211,30 @@
 <p>将 <code>&lt;YOUR_API_KEY&gt;</code> 替换为您的实际 <a target="_blank" rel="noopener" href="https://platform.openai.com/account/api-keys">API</a> 密钥，并将 <code>/Users/zhouluyao/Downloads/002.m4a</code> 替换为您的音频文件的路径。</p>
 <h3 id="3、您可以运行以下命令生成文本文件"><a href="#3、您可以运行以下命令生成文本文件" class="headerlink" title="3、您可以运行以下命令生成文本文件"></a>3、您可以运行以下命令生成文本文件</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 speech-to-text.py</span><br></pre></td></tr></table></figure>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/04/upgrade-chatgpt-plus/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="youqianhua">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="教程仓库">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/04/04/upgrade-chatgpt-plus/" class="post-title-link" itemprop="url">ChatGPT Plus开通流程</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-04-04 18:39:01" itemprop="dateCreated datePublished" datetime="2023-04-04T18:39:01+08:00">2023-04-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-04-08 21:19:44" itemprop="dateModified" datetime="2023-04-08T21:19:44+08:00">2023-04-08</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="一、ChatGPT-Plus开通流程"><a href="#一、ChatGPT-Plus开通流程" class="headerlink" title="一、ChatGPT Plus开通流程"></a>一、ChatGPT Plus开通流程</h1><p>本教程针对的群体是已经有了ChatGPT账户，目前想要开通ChatGPT Plus 会员的用户，如果您还没有注册ChatGPT，可以查看这个教程 <a target="_blank" rel="noopener" href="https://yqzhouluyao.github.io/2023/03/23/register-chatgpt/">在国内如何注册一个免费的ChatGPT账号 </a>先去注册一个。</p>
-<h4 id="想要开通ChatGPT-Plus会员的有两个前置条件："><a href="#想要开通ChatGPT-Plus会员的有两个前置条件：" class="headerlink" title="想要开通ChatGPT Plus会员的有两个前置条件："></a>想要开通ChatGPT Plus会员的有两个前置条件：</h4><p>1、注册1个加密货币交易平台 <a target="_blank" rel="noopener" href="https://cnouyi.care/join/87223242">欧易</a></p>
-<p>2、申请一张虚拟美国银行卡 <a target="_blank" rel="noopener" href="https://depay.depay.one/web-app/register-h5?invitCode=980844&lang=zh-cn">Depay</a></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2023/04/04/upgrade-chatgpt-plus/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/23/register-chatgpt/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="youqianhua">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="教程仓库">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/03/23/register-chatgpt/" class="post-title-link" itemprop="url">在国内如何注册一个免费的ChatGPT账号</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-03-23 17:34:33" itemprop="dateCreated datePublished" datetime="2023-03-23T17:34:33+08:00">2023-03-23</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-04-08 21:19:29" itemprop="dateModified" datetime="2023-04-08T21:19:29+08:00">2023-04-08</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="在国内如何注册一个免费的ChatGPT账号"><a href="#在国内如何注册一个免费的ChatGPT账号" class="headerlink" title="在国内如何注册一个免费的ChatGPT账号"></a>在国内如何注册一个免费的ChatGPT账号</h1><h3 id="一-准备"><a href="#一-准备" class="headerlink" title="一. 准备"></a>一. <strong>准备</strong></h3><p>ChatGPT现在还没有对国内提供服务，国内的IP访问会被限制，这就需要使用国外的iP进行访问。</p>
-<p>在注册ChatGPT账号的过程中，不支持国内手机号注册，需要提供一个国外的手机号，好在目前都有成熟的解决方案，注册的门槛在于解决下面两个问题。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2023/03/23/register-chatgpt/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/04/04/upgrade-chatgpt-plus/" rel="prev" title="ChatGPT Plus开通流程">
+      <i class="fa fa-chevron-left"></i> ChatGPT Plus开通流程
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/23/How-to-write-a-good-tutorial/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="youqianhua">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="教程仓库">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/03/23/How-to-write-a-good-tutorial/" class="post-title-link" itemprop="url">怎么写好一个教程</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-03-23 17:24:08" itemprop="dateCreated datePublished" datetime="2023-03-23T17:24:08+08:00">2023-03-23</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-04-08 21:16:44" itemprop="dateModified" datetime="2023-04-08T21:16:44+08:00">2023-04-08</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="介绍："><a href="#介绍：" class="headerlink" title="介绍："></a>介绍：</h2><p>写教程前首先要评估要解决的问题对目标读者是否具备一定的难度，</p>
-<p>要解决的问题没有难度那么写教程就没有价值，</p>
-<p>要解决的问题只有具备一定难度，读者不学习不去看教程就搞不定的问题才值得去写。</p>
-<p>一个好的教程包括5个必要部分：标题、介绍、可执行步骤、 常见问题&amp;解决、总结。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2023/03/23/How-to-write-a-good-tutorial/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
   
 
 
@@ -496,6 +287,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%87%E5%88%86%E9%9F%B3%E9%A2%91%E6%96%87%E4%BB%B6%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">切分音频文件：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%AE%89%E8%A3%85-PyDub-%E5%92%8C-FFmpeg"><span class="nav-number">1.0.1.</span> <span class="nav-text">1. 安装 PyDub 和 FFmpeg</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%88%9B%E5%BB%BA-Python-%E8%84%9A%E6%9C%AC-split-audio-py"><span class="nav-number">1.0.2.</span> <span class="nav-text">2. 创建 Python 脚本 split_audio.py</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E8%BF%90%E8%A1%8C%E8%84%9A%E6%9C%AC"><span class="nav-number">1.0.3.</span> <span class="nav-text">3. 运行脚本</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9F%B3%E9%A2%91%E6%96%87%E4%BB%B6%E8%BD%AC%E6%96%87%E6%9C%AC%EF%BC%9A"><span class="nav-number">2.</span> <span class="nav-text">音频文件转文本：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%AE%89%E8%A3%85-OpenAI-Python-%E5%BA%93%EF%BC%88v0-27-0-%E6%88%96%E6%9B%B4%E9%AB%98%E7%89%88%E6%9C%AC%EF%BC%89"><span class="nav-number">2.0.1.</span> <span class="nav-text">1. 安装 OpenAI Python 库（v0.27.0 或更高版本）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E4%BD%BF%E7%94%A8%E4%BB%A5%E4%B8%8B%E8%84%9A%E6%9C%AC-speech-to-text-py-%E5%B0%86%E6%9C%AC%E5%9C%B0%E5%BD%95%E9%9F%B3%E6%96%87%E4%BB%B6-record-m4a-%E8%BD%AC%E6%8D%A2%E4%B8%BA%E6%96%87%E6%9C%AC"><span class="nav-number">2.0.2.</span> <span class="nav-text">2. 使用以下脚本 speech-to-text.py 将本地录音文件 record.m4a 转换为文本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3%E3%80%81%E6%82%A8%E5%8F%AF%E4%BB%A5%E8%BF%90%E8%A1%8C%E4%BB%A5%E4%B8%8B%E5%91%BD%E4%BB%A4%E7%94%9F%E6%88%90%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6"><span class="nav-number">2.0.3.</span> <span class="nav-text">3、您可以运行以下命令生成文本文件</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
