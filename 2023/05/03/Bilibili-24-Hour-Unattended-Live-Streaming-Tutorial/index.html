@@ -20,28 +20,32 @@
     var CONFIG = {"hostname":"blog.luyaolab.cn","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="教程仓库">
-<meta property="og:url" content="http://blog.luyaolab.cn/index.html">
+  <meta name="description" content="在这个教程中，我们将介绍如何使用脚本在Bilibili直播间进行24小时无人值守直播。 主要参考了 AK‘s Tech Studio 和lala的脚本 以及自己增加了以下功能。 1、通过更新脚本中的文件格式过滤，支持MP4、AVI、MKV等多种视频格式推流。 2、添加纯音频推送流功能，允许用户流式传输 MP3、WAV 等音频文件。 3、实现音频+图片推流功能，用户可以推流带有音轨的静止图像（如JP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Bilibili-24-Hour-Unattended-Live-Streaming-Tutorial">
+<meta property="og:url" content="http://blog.luyaolab.cn/2023/05/03/Bilibili-24-Hour-Unattended-Live-Streaming-Tutorial/index.html">
 <meta property="og:site_name" content="教程仓库">
+<meta property="og:description" content="在这个教程中，我们将介绍如何使用脚本在Bilibili直播间进行24小时无人值守直播。 主要参考了 AK‘s Tech Studio 和lala的脚本 以及自己增加了以下功能。 1、通过更新脚本中的文件格式过滤，支持MP4、AVI、MKV等多种视频格式推流。 2、添加纯音频推送流功能，允许用户流式传输 MP3、WAV 等音频文件。 3、实现音频+图片推流功能，用户可以推流带有音轨的静止图像（如JP">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-05-03T04:50:15.000Z">
+<meta property="article:modified_time" content="2023-05-03T04:51:15.868Z">
 <meta property="article:author" content="youqianhua">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://blog.luyaolab.cn/">
+<link rel="canonical" href="http://blog.luyaolab.cn/2023/05/03/Bilibili-24-Hour-Unattended-Live-Streaming-Tutorial/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>教程仓库</title>
+  <title>Bilibili-24-Hour-Unattended-Live-Streaming-Tutorial | 教程仓库</title>
   
 
 
@@ -139,9 +143,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -157,10 +162,9 @@
       <meta itemprop="name" content="教程仓库">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/05/03/Bilibili-24-Hour-Unattended-Live-Streaming-Tutorial/" class="post-title-link" itemprop="url">Bilibili-24-Hour-Unattended-Live-Streaming-Tutorial</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          Bilibili-24-Hour-Unattended-Live-Streaming-Tutorial
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -184,7 +188,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>在这个教程中，我们将介绍如何使用脚本在Bilibili直播间进行24小时无人值守直播。</p>
+        <p>在这个教程中，我们将介绍如何使用脚本在Bilibili直播间进行24小时无人值守直播。</p>
 <p>主要参考了 <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=Ko20sPb93fo&t=89s">AK‘s Tech Studio</a> 和<a target="_blank" rel="noopener" href="https://lala.im/4816.html">lala的脚本</a> 以及自己增加了以下功能。</p>
 <p>1、通过更新脚本中的文件格式过滤，支持MP4、AVI、MKV等多种视频格式推流。</p>
 <p>2、添加纯音频推送流功能，允许用户流式传输 MP3、WAV 等音频文件。</p>
@@ -251,422 +255,30 @@
 <h1 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h1><p>本教程只针对了bilibili平台，同时往多个平台推流需要学习多线程处理，也需要更大的带宽 ，如果后期我有需要会更新这个教程。</p>
 <p>把创意和好玩的东西玩起来 ，真正的把技术应用起来，做一个能够盈利的东西，是一件很值得持续思路的一件事，愿你能挣到钱。</p>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://blog.luyaolab.cn/2023/04/30/how-to-download-webpage-code-to-learn/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="youqianhua">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="教程仓库">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/04/30/how-to-download-webpage-code-to-learn/" class="post-title-link" itemprop="url">如何下载网页代码到本地去学习</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2023-04-30 02:26:02 / 修改时间：20:18:17" itemprop="dateCreated datePublished" datetime="2023-04-30T02:26:02+08:00">2023-04-30</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="介绍："><a href="#介绍：" class="headerlink" title="介绍："></a>介绍：</h1><p>有时候我们在浏览网站时，看到一些自己感兴趣的特效或布局，却不知道如何实现。这时候我们可以把网站对应的代码和素材下载到本地进行学习。掌握了相关技巧之后，就可以部署自己的网站。</p>
-<h2 id="一、在Chrome浏览器安装Webrecorder-ArchiveWeb-page-扩展"><a href="#一、在Chrome浏览器安装Webrecorder-ArchiveWeb-page-扩展" class="headerlink" title="一、在Chrome浏览器安装Webrecorder ArchiveWeb.page 扩展"></a>一、在Chrome浏览器安装Webrecorder ArchiveWeb.page 扩展</h2><p>首先，在 Chrome 浏览器中安装 ArchiveWeb.page 扩展。扩展链接在 <a target="_blank" rel="noopener" href="https://chrome.google.com/webstore/detail/webrecorder-archivewebpag/fpeoodllldobpkbkabpblcfaogecpndd?hl=en-US">这里</a>。</p>
-<h2 id="二、使用扩展录制网站"><a href="#二、使用扩展录制网站" class="headerlink" title="二、使用扩展录制网站"></a>二、使用扩展录制网站</h2><p>安装好扩展后，点击浏览器中的扩展图标，在弹出窗口里可以看到「Start」按钮。点击开始录制，会看到录制进度：</p>
-<p><strong>Recording:</strong> <em>3 URLs pending, please wait before loading a new page.</em></p>
-<p>如果某些页面没有被录制到，切换到相应页面，扩展会自动进行录制。</p>
-<p>录制完成后，点击 Browse Archive，在 MY WEB ARCHIVE 下面有一个 Download 按钮，点击下载录制好的网页数据。</p>
-<h2 id="三、解压缩下载的wacz文件，并提取-HTML-CSS-和-JS-文件"><a href="#三、解压缩下载的wacz文件，并提取-HTML-CSS-和-JS-文件" class="headerlink" title="三、解压缩下载的wacz文件，并提取 HTML, CSS, 和 JS 文件"></a>三、解压缩下载的wacz文件，并提取 HTML, CSS, 和 JS 文件</h2><ol>
-<li><p>将 .wacz 文件重命名为 .zip 文件：将 .wacz 文件的文件扩展名更改为 .zip。例如，如果您的文件名为 your_file_name.wacz，请将其重命名为 your_file_name.zip。</p>
-</li>
-<li><p>提取 .zip 文件：使用 WinZip、WinRAR、7-Zip 等文件归档工具或操作系统中的内置归档实用程序来提取重命名的 .zip 文件的内容。解压后，在 archive 目录下会有一个 data.warc.gz 文件，双击解压会解压成 data.warc 文件，这个文件会在下面的步骤用到。</p>
-</li>
-<li><p>安装 warcio 和 requests：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install warcio requests</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>使用以下内容创建名为 extract_warc.py 的 Python 脚本：</p>
-</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">from</span> warcio.archiveiterator <span class="keyword">import</span> ArchiveIterator</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlparse</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(sys.argv) != <span class="number">3</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;Usage: python extract_warc.py input_warc_file output_directory&quot;</span>)</span><br><span class="line">        sys.exit(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    input_warc_file = sys.argv[<span class="number">1</span>]</span><br><span class="line">    output_directory = sys.argv[<span class="number">2</span>]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(output_directory):</span><br><span class="line">        os.makedirs(output_directory)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(input_warc_file, <span class="string">&#x27;rb&#x27;</span>) <span class="keyword">as</span> stream:</span><br><span class="line">        <span class="keyword">for</span> record <span class="keyword">in</span> ArchiveIterator(stream):</span><br><span class="line">            <span class="keyword">if</span> record.rec_type == <span class="string">&#x27;response&#x27;</span>:</span><br><span class="line">                url = record.rec_headers.get_header(<span class="string">&#x27;WARC-Target-URI&#x27;</span>)</span><br><span class="line">                parsed_url = urlparse(url)</span><br><span class="line"></span><br><span class="line">                <span class="comment"># Remove leading &#x27;/&#x27; from the path</span></span><br><span class="line">                path = parsed_url.path.lstrip(<span class="string">&#x27;/&#x27;</span>)</span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">not</span> path:</span><br><span class="line">                    path = <span class="string">&quot;index.html&quot;</span></span><br><span class="line"></span><br><span class="line">                <span class="comment"># Create the output file path</span></span><br><span class="line">                output_file = os.path.join(output_directory, path)</span><br><span class="line"></span><br><span class="line">                <span class="comment"># Ensure the directory exists</span></span><br><span class="line">                os.makedirs(os.path.dirname(output_file), exist_ok=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">                <span class="keyword">with</span> <span class="built_in">open</span>(output_file, <span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">                    f.write(record.content_stream().read())</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
-
-<ol start="5">
-<li>使用输入 WARC 文件和输出目录作为参数运行 Python 脚本：</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python extract_warc.py your_file_name.warc output_directory</span><br></pre></td></tr></table></figure>
-
-<p>将 your_file_name.warc 替换为 .warc 文件的名称，并将 output_directory 替换为要保存提取文件的目录的名称。</p>
-<h2 id="四、在本地启动服务验证"><a href="#四、在本地启动服务验证" class="headerlink" title="四、在本地启动服务验证"></a>四、在本地启动服务验证</h2><ol>
-<li><p>首先，打开一个终端并导航到您提取 WARC 内容的输出目录output_directory：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /output_directory</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>如果您使用的是 Python 3.x，则可以通过运行以下命令启动本地 Web 服务器：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m http.server</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>您可以通过打开浏览器并导航至 <a target="_blank" rel="noopener" href="http://localhost:8000/">http://localhost:8000</a> 来访问本地服务的网站。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:<span class="number">8000</span></span><br></pre></td></tr></table></figure></li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://blog.luyaolab.cn/2023/04/16/speech-to-text/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="youqianhua">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="教程仓库">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/04/16/speech-to-text/" class="post-title-link" itemprop="url">如何使用whisper实现音频转文字</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-04-16 21:32:29" itemprop="dateCreated datePublished" datetime="2023-04-16T21:32:29+08:00">2023-04-16</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-04-23 23:58:08" itemprop="dateModified" datetime="2023-04-23T23:58:08+08:00">2023-04-23</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="切分音频文件："><a href="#切分音频文件：" class="headerlink" title="切分音频文件："></a>切分音频文件：</h1><p>Whisper API 仅支持小于 25 MB 的文件，如果您有比这更长的音频文件，则需要将其分成 25 MB 或更小的块或使用压缩音频格式。</p>
-<h3 id="1-安装-PyDub-和-FFmpeg"><a href="#1-安装-PyDub-和-FFmpeg" class="headerlink" title="1. 安装 PyDub 和 FFmpeg"></a>1. 安装 PyDub 和 FFmpeg</h3><p>PyDub 依赖 FFmpeg 来处理各种音频格式。首先，使用 pip 安装 PyDub，然后安装 FFmpeg。</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install pydub</span><br><span class="line">brew install ffmpeg</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="2-创建-Python-脚本-split-audio-py"><a href="#2-创建-Python-脚本-split-audio-py" class="headerlink" title="2. 创建 Python 脚本 split_audio.py"></a>2. 创建 Python 脚本 split_audio.py</h3><p>使用以下内容创建 Python 脚本 split_audio.py，该脚本将音频文件切分成 10 分钟长的音频片段，您可以根据自己音频文件的具体情况进行切分。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pydub <span class="keyword">import</span> AudioSegment</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="comment">#切分成10分钟长的音频片段，您可以根据自己音频文件的具体情况进行切分</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">split_audio</span>(<span class="params">input_file, output_dir, chunk_length_ms=<span class="number">10</span> * <span class="number">60</span> * <span class="number">1000</span></span>):</span><br><span class="line">    <span class="comment"># Load the audio file</span></span><br><span class="line">    audio = AudioSegment.from_file(input_file)</span><br><span class="line">    chunks = [audio[i:i + chunk_length_ms] <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(audio), chunk_length_ms)]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(output_dir):</span><br><span class="line">        os.makedirs(output_dir)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i, chunk <span class="keyword">in</span> <span class="built_in">enumerate</span>(chunks):</span><br><span class="line">        chunk.export(os.path.join(output_dir, <span class="string">f&quot;<span class="subst">&#123;i:03d&#125;</span>_<span class="subst">&#123;os.path.basename(input_file).split(<span class="string">&#x27;.&#x27;</span>)[<span class="number">0</span>]&#125;</span>.mp3&quot;</span>), <span class="built_in">format</span>=<span class="string">&quot;mp3&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    input_file = <span class="string">&quot;/Users/zhouluyao/Desktop/split_audio/001.m4a&quot;</span></span><br><span class="line">    output_dir = <span class="string">&quot;/Users/zhouluyao/Desktop/split_audio/output/&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Create the output directory if it doesn&#x27;t exist</span></span><br><span class="line">    os.makedirs(output_dir, exist_ok=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">    split_audio(input_file, output_dir)</span><br></pre></td></tr></table></figure>
-
-<p>将 <code>/Users/zhouluyao/Desktop/split_audio/001.m4a</code> 替换为长音频文件的路径，将 <code>/Users/zhouluyao/Desktop/split_audio/output/</code> 替换为要保存拆分音频文件的文件夹的路径。</p>
-<h3 id="3-运行脚本"><a href="#3-运行脚本" class="headerlink" title="3. 运行脚本"></a>3. 运行脚本</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python split_audio.py</span><br></pre></td></tr></table></figure>
-
-<p>此脚本会将输入音频文件拆分为更小的块，每个块 10 分钟（默认情况下），并将它们保存在指定的输出文件夹中。您可以更改 <code>split_audio</code> 函数中的 <code>chunk_length_ms</code> 参数以根据需要调整块长度（以毫秒为单位）。拆分音频文件后，您可以使用 Whisper API 处理每个较小的块。</p>
-<h1 id="音频文件转文本："><a href="#音频文件转文本：" class="headerlink" title="音频文件转文本："></a>音频文件转文本：</h1><p>要使用 OpenAI 的 API 将本地录音文件 <code>record.m4a</code> 转换为文本，请按照以下步骤操作：</p>
-<h3 id="1-安装-OpenAI-Python-库（v0-27-0-或更高版本）"><a href="#1-安装-OpenAI-Python-库（v0-27-0-或更高版本）" class="headerlink" title="1. 安装 OpenAI Python 库（v0.27.0 或更高版本）"></a>1. 安装 OpenAI Python 库（v0.27.0 或更高版本）</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install openai</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="2-使用以下脚本-speech-to-text-py-将本地录音文件-record-m4a-转换为文本"><a href="#2-使用以下脚本-speech-to-text-py-将本地录音文件-record-m4a-转换为文本" class="headerlink" title="2. 使用以下脚本 speech-to-text.py 将本地录音文件 record.m4a 转换为文本"></a>2. 使用以下脚本 speech-to-text.py 将本地录音文件 record.m4a 转换为文本</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> openai</span><br><span class="line"></span><br><span class="line"><span class="comment"># Set your API key</span></span><br><span class="line">openai.api_key = <span class="string">&quot;&lt;YOUR_API_KEY&gt;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Open the audio file</span></span><br><span class="line">audio_file = <span class="built_in">open</span>(<span class="string">&quot;/Users/zhouluyao/Downloads/002.m4a&quot;</span>, <span class="string">&quot;rb&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Transcribe the audio file</span></span><br><span class="line">transcript = openai.Audio.transcribe(<span class="string">&quot;whisper-1&quot;</span>, audio_file, language=<span class="string">&quot;zh&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Get the transcribed text</span></span><br><span class="line">transcribed_text = transcript[<span class="string">&quot;text&quot;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Print and save the transcribed text</span></span><br><span class="line"><span class="built_in">print</span>(transcribed_text)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;transcription.txt&quot;</span>, <span class="string">&quot;w&quot;</span>, encoding=<span class="string">&quot;utf-8&quot;</span>) <span class="keyword">as</span> file:</span><br><span class="line">    file.write(transcribed_text)</span><br></pre></td></tr></table></figure>
-
-<p>将 <code>&lt;YOUR_API_KEY&gt;</code> 替换为您的实际 <a target="_blank" rel="noopener" href="https://platform.openai.com/account/api-keys">API</a> 密钥，并将 <code>/Users/zhouluyao/Downloads/002.m4a</code> 替换为您的音频文件的路径。</p>
-<h3 id="3、您可以运行以下命令生成文本文件"><a href="#3、您可以运行以下命令生成文本文件" class="headerlink" title="3、您可以运行以下命令生成文本文件"></a>3、您可以运行以下命令生成文本文件</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 speech-to-text.py</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://blog.luyaolab.cn/2023/04/04/upgrade-chatgpt-plus/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="youqianhua">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="教程仓库">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/04/04/upgrade-chatgpt-plus/" class="post-title-link" itemprop="url">ChatGPT Plus开通流程</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-04-04 18:39:01" itemprop="dateCreated datePublished" datetime="2023-04-04T18:39:01+08:00">2023-04-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-04-08 21:19:44" itemprop="dateModified" datetime="2023-04-08T21:19:44+08:00">2023-04-08</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="一、ChatGPT-Plus开通流程"><a href="#一、ChatGPT-Plus开通流程" class="headerlink" title="一、ChatGPT Plus开通流程"></a>一、ChatGPT Plus开通流程</h1><p>本教程针对的群体是已经有了ChatGPT账户，目前想要开通ChatGPT Plus 会员的用户，如果您还没有注册ChatGPT，可以查看这个教程 <a target="_blank" rel="noopener" href="https://yqzhouluyao.github.io/2023/03/23/register-chatgpt/">在国内如何注册一个免费的ChatGPT账号 </a>先去注册一个。</p>
-<h4 id="想要开通ChatGPT-Plus会员的有两个前置条件："><a href="#想要开通ChatGPT-Plus会员的有两个前置条件：" class="headerlink" title="想要开通ChatGPT Plus会员的有两个前置条件："></a>想要开通ChatGPT Plus会员的有两个前置条件：</h4><p>1、注册1个加密货币交易平台 <a target="_blank" rel="noopener" href="https://cnouyi.care/join/87223242">欧易</a></p>
-<p>2、申请一张虚拟美国银行卡 <a target="_blank" rel="noopener" href="https://depay.depay.one/web-app/register-h5?invitCode=980844&lang=zh-cn">Depay</a></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2023/04/04/upgrade-chatgpt-plus/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://blog.luyaolab.cn/2023/03/23/register-chatgpt/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="youqianhua">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="教程仓库">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/03/23/register-chatgpt/" class="post-title-link" itemprop="url">在国内如何注册一个免费的ChatGPT账号</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-03-23 17:34:33" itemprop="dateCreated datePublished" datetime="2023-03-23T17:34:33+08:00">2023-03-23</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-04-08 21:19:29" itemprop="dateModified" datetime="2023-04-08T21:19:29+08:00">2023-04-08</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="在国内如何注册一个免费的ChatGPT账号"><a href="#在国内如何注册一个免费的ChatGPT账号" class="headerlink" title="在国内如何注册一个免费的ChatGPT账号"></a>在国内如何注册一个免费的ChatGPT账号</h1><h3 id="一-准备"><a href="#一-准备" class="headerlink" title="一. 准备"></a>一. <strong>准备</strong></h3><p>ChatGPT现在还没有对国内提供服务，国内的IP访问会被限制，这就需要使用国外的iP进行访问。</p>
-<p>在注册ChatGPT账号的过程中，不支持国内手机号注册，需要提供一个国外的手机号，好在目前都有成熟的解决方案，注册的门槛在于解决下面两个问题。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2023/03/23/register-chatgpt/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/04/30/how-to-download-webpage-code-to-learn/" rel="prev" title="如何下载网页代码到本地去学习">
+      <i class="fa fa-chevron-left"></i> 如何下载网页代码到本地去学习
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://blog.luyaolab.cn/2023/03/23/How-to-write-a-good-tutorial/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="youqianhua">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="教程仓库">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/03/23/How-to-write-a-good-tutorial/" class="post-title-link" itemprop="url">怎么写好一个教程</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-03-23 17:24:08" itemprop="dateCreated datePublished" datetime="2023-03-23T17:24:08+08:00">2023-03-23</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-04-08 21:16:44" itemprop="dateModified" datetime="2023-04-08T21:16:44+08:00">2023-04-08</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="介绍："><a href="#介绍：" class="headerlink" title="介绍："></a>介绍：</h2><p>写教程前首先要评估要解决的问题对目标读者是否具备一定的难度，</p>
-<p>要解决的问题没有难度那么写教程就没有价值，</p>
-<p>要解决的问题只有具备一定难度，读者不学习不去看教程就搞不定的问题才值得去写。</p>
-<p>一个好的教程包括5个必要部分：标题、介绍、可执行步骤、 常见问题&amp;解决、总结。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2023/03/23/How-to-write-a-good-tutorial/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
   
 
 
@@ -719,6 +331,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E9%9D%A2%E6%98%AF%E4%BF%AE%E6%94%B9%E5%90%8E%E7%9A%84%E4%BB%A3%E7%A0%81%EF%BC%9A"><span class="nav-number">1.</span> <span class="nav-text">下面是修改后的代码：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%B7%E6%8C%89%E7%85%A7%E4%BB%A5%E4%B8%8B%E6%AD%A5%E9%AA%A4%E6%93%8D%E4%BD%9C%EF%BC%9A"><span class="nav-number"></span> <span class="nav-text">请按照以下步骤操作：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96Bilibili%E7%9B%B4%E6%92%AD%E9%97%B4%E7%9A%84RTMP%E6%8E%A8%E6%B5%81%E5%9C%B0%E5%9D%80%EF%BC%8C%E5%85%88%E7%B2%98%E8%B4%B4%E5%87%BA%E6%9D%A5%E4%BF%9D%E5%AD%98%E5%9C%A8%E8%AE%B0%E4%BA%8B%E6%9C%AC%E4%B8%8A%EF%BC%8C%E5%90%8E%E9%9D%A2%E4%BC%9A%E7%94%A8%E5%88%B0"><span class="nav-number">2.</span> <span class="nav-text">获取Bilibili直播间的RTMP推流地址，先粘贴出来保存在记事本上，后面会用到</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E5%A7%8B%E7%9B%B4%E6%92%AD"><span class="nav-number">3.</span> <span class="nav-text">开始直播</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%A5%E5%85%85screen%E7%9A%84%E4%B8%80%E4%BA%9B%E7%94%A8%E6%B3%95%EF%BC%9A"><span class="nav-number">4.</span> <span class="nav-text">补充screen的一些用法：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="nav-number"></span> <span class="nav-text">总结：</span></a></div>
       </div>
       <!--/noindex-->
 
